@@ -1,5 +1,6 @@
 from rest_framework import generics
 from django.contrib.auth.models import User
+from .models import UserProfile
 from .serializers import RegisterSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -23,7 +24,8 @@ def register_user(request):
     if User.objects.filter(username=username).exists():
         return Response({'error': 'El nombre de usuario ya existe.'}, status=status.HTTP_400_BAD_REQUEST)
 
-    user = User.objects.create_user(username=username, email=email, password=password)
+    User.objects.create_user(username=username, email=email, password=password)
+    # Los créditos se asignan automáticamente a través del signal en models.py
     return Response({'message': 'Usuario creado correctamente.'}, status=status.HTTP_201_CREATED)
 
 

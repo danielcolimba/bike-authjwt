@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = 'auth.User'
+# AUTH_USER_MODEL = 'accounts.User'  # Comentado para usar el User model por defecto
 
 # Application definition
 
