@@ -1,0 +1,53 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+.venv
+.venv.local
+.venv.*.local
+
+# Build output
+dist/
+build/
+coverage/
+.tmp/
+temp/
+*.tsbuildinfo
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Misc
+*.bak
+*.orig
+*.rej
+*.pid
+*.seed
+*.tgz
+
+# Test output
+jest/
+test-results/
+
+# Pychache
+__pycache__/
+db.sqlite3
