@@ -1,42 +1,32 @@
 # Bike Auth Service
 
-The **Bike Auth Service** is an authentication microservice for the cloud_project, responsible for managing user registration, login, and token-based authentication for bike-related applications.
+Microservicio de autenticación JWT para el sistema de bicicletas, desarrollado con Django REST Framework.
 
-## Technologies & Dependencies
+## 🚀 Tecnologías
 
-- **JWT (jsonwebtoken)**: For token-based authentication
-- **bcrypt**: For password hashing
+- **Django 5.2.4** - Framework web
+- **Django REST Framework** - API REST
+- **JWT** - Autenticación por tokens
+- **PostgreSQL** - Base de datos
+- **Docker** - Contenedorización
 
-## Setup Instructions
+## ⚡ Inicio Rápido
 
-1. **Clone the repository**
-    ```bash
-    git clone <repository-url>
-    cd bike-auth
-    ```
+```bash
+# Con Docker Compose (recomendado)
+docker-compose up -d auth
 
-2. **Install dependencies**
-    ```bash
-    npm install
-    ```
+# Localmente
+python manage.py runserver 8001
+```
 
-3. **Configure environment variables**
-    - Create a `.env` file in the root directory.
-    - Add the following variables:
-      ```
-      JWT_SECRET=<your-jwt-secret>
-      PORT=3000
-      ```
+**URL del servicio:** http://localhost:8001
 
-4. **Start the service**
-    ```bash
-    npm start
-    ```
+## 📡 API Endpoints
 
-The service will be available at `http://localhost:3001`.
+- `POST /auth/register/` - Registro de usuarios
+- `POST /auth/login/` - Inicio de sesión
+- `POST /auth/refresh/` - Renovar token
+- `GET /auth/profile/` - Perfil del usuario
 
-## Usage
-
-- Register a new user: `POST /register`
-- Login: `POST /login`
-- Protected routes require a valid JWT token in the `Authorization` header.
+**Autenticación:** Bearer Token en header `Authorization`
